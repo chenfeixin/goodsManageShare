@@ -1,0 +1,1 @@
+<view><view class="box"><block wx:if="{{shareImg}}"><image class="box_bg" src="{{shareImg}}"></image></block></view><view data-event-opts="{{[['tap',[['shareWx',['$event']]]]]}}" class="button" bindtap="__e">邀请好友</view><canvas style="width:702rpx;height:1000rpx;position:fixed;left:9000px;" canvas-id="canvas"></canvas></view>
