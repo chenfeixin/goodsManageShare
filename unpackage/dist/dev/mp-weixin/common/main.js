@@ -89,31 +89,10 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default =
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default =
 {
   onLaunch: function onLaunch() {
-    if (!uni.getStorageSync('user')) {
-      uni.reLaunch({
-        url: '/pages/login/login' });
 
-    } else {
-      uni.request({
-        url: this.globalData.url + 'api.login/isLogins',
-        method: 'POST',
-        data: {
-          uid: uni.getStorageSync('user').id },
-
-        success: function success(res) {
-          if (res.data.code == 1) {
-            console.log(res);
-          } else {
-            uni.reLaunch({
-              url: '/pages/login/login' });
-
-          }
-        } });
-
-    }
   },
   onShow: function onShow() {
     console.log('App Show');
@@ -123,7 +102,6 @@ __webpack_require__.r(__webpack_exports__);
   },
   globalData: {
     url: 'https://www.gargle.top/addons/shop/' } };exports.default = _default;
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
 /* 9 */

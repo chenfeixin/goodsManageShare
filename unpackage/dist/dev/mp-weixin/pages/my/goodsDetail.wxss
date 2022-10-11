@@ -1,0 +1,258 @@
+@charset "UTF-8";
+/**
+ * 这里是uni-app内置的常用样式变量
+ *
+ * uni-app 官方扩展插件及插件市场（https://ext.dcloud.net.cn）上很多三方插件均使用了这些样式变量
+ * 如果你是插件开发者，建议你使用scss预处理，并在插件代码中直接使用这些变量（无需 import 这个文件），方便用户通过搭积木的方式开发整体风格一致的App
+ *
+ */
+/**
+ * 如果你是App开发者（插件使用者），你可以通过修改这些变量来定制自己的插件主题，实现自定义主题功能
+ *
+ * 如果你的项目同样使用了scss预处理，你也可以直接在你的 scss 代码中使用如下变量，同时无需 import 这个文件
+ */
+/* 颜色变量 */
+/* 行为相关颜色 */
+/* 文字基本颜色 */
+/* 背景颜色 */
+/* 边框颜色 */
+/* 尺寸变量 */
+/* 文字尺寸 */
+/* 图片尺寸 */
+/* Border Radius */
+/* 水平间距 */
+/* 垂直间距 */
+/* 透明度 */
+/* 文章场景相关 */
+.swiperbox {
+  width: 750rpx;
+  height: 750rpx;
+  overflow: hidden;
+}
+.swiperbox .swiper {
+  width: 750rpx;
+  height: 750rpx;
+  overflow: hidden;
+}
+.swiperbox .swiper_img {
+  width: 750rpx;
+  height: 750rpx;
+}
+.pricebox {
+  margin: 28rpx 24rpx;
+  height: 50rpx;
+  overflow: hidden;
+}
+.pricebox_img {
+  float: left;
+  margin-top: 16rpx;
+  width: 20rpx;
+  height: 18rpx;
+  overflow: hidden;
+}
+.pricebox_now {
+  float: left;
+  margin-left: 12rpx;
+  height: 50rpx;
+  font-size: 36rpx;
+  font-family: PingFangSC-Medium, PingFang SC;
+  font-weight: 500;
+  color: #CBA55F;
+  line-height: 50rpx;
+}
+.pricebox_now text {
+  display: inline-block;
+  margin-left: 8rpx;
+  font-size: 28rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+}
+.pricebox_origin {
+  float: left;
+  margin-left: 32rpx;
+  font-size: 28rpx;
+  font-family: PingFangSC-Medium, PingFang SC;
+  font-weight: 500;
+  color: #999999;
+  line-height: 50rpx;
+  text-decoration: line-through;
+}
+.pricebox_count {
+  float: right;
+  font-size: 28rpx;
+  font-family: PingFangSC-Medium, PingFang SC;
+  font-weight: 500;
+  color: #CCCCCC;
+  line-height: 50rpx;
+}
+.name {
+  margin: 28rpx 24rpx;
+  width: 702rpx;
+  font-size: 32rpx;
+  font-family: PingFangSC-Medium, PingFang SC;
+  font-weight: 500;
+  color: #333333;
+  line-height: 44rpx;
+  overflow: hidden;
+}
+.border {
+  width: 750rpx;
+  height: 12rpx;
+  background: #F4F4F4;
+  opacity: 0.89;
+  overflow: hidden;
+}
+.detail {
+  margin-top: 28rpx;
+  padding-bottom: 120rpx;
+  width: 750rpx;
+  overflow: hidden;
+}
+.detail image {
+  width: 100%;
+  height: 100%;
+}
+.detail_img {
+  width: 750rpx;
+  height: 60rpx;
+}
+.footer {
+  position: fixed;
+  bottom: 0rpx;
+  left: 0rpx;
+  width: 750rpx;
+  height: 120rpx;
+  background: #FAFAFA;
+  overflow: hidden;
+}
+.footer_button {
+  margin: 20rpx 155rpx;
+  width: 440rpx;
+  height: 84rpx;
+  background: linear-gradient(90deg, #F6E1B0 0%, #EDC66E 100%);
+  border-radius: 50rpx;
+  text-align: center;
+  font-size: 32rpx;
+  font-family: PingFangSC-Semibold, PingFang SC;
+  font-weight: 600;
+  color: #333333;
+  line-height: 84rpx;
+}
+.popup_bg {
+  position: fixed;
+  top: 0rpx;
+  left: 0rpx;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 98;
+  overflow: hidden;
+}
+.popup {
+  position: fixed;
+  bottom: 0rpx;
+  left: 0rpx;
+  width: 750rpx;
+  height: 750rpx;
+  background: #FFFFFF;
+  border-radius: 24rpx 24rpx 0rpx 0rpx;
+  z-index: 99;
+  overflow: hidden;
+}
+.popup_img {
+  margin-top: 42rpx;
+  margin-left: 684rpx;
+  width: 36rpx;
+  height: 36rpx;
+}
+.popup_title {
+  margin-top: 36rpx;
+  height: 44rpx;
+  font-size: 32rpx;
+  font-family: PingFangSC-Medium, PingFang SC;
+  font-weight: 500;
+  color: #000000;
+  line-height: 44rpx;
+  text-align: center;
+}
+.popup_num {
+  margin: 44rpx 40rpx 40rpx 44rpx;
+  height: 40rpx;
+  font-size: 28rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #000000;
+  line-height: 40rpx;
+  overflow: hidden;
+}
+.popup_num text {
+  float: right;
+}
+.popup_siteTitle {
+  margin-bottom: 30rpx;
+  margin-left: 44rpx;
+  height: 40rpx;
+  font-size: 28rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #000000;
+  line-height: 40rpx;
+  overflow: hidden;
+}
+.popup_site {
+  margin: 0rpx 24rpx;
+  width: 698rpx;
+  height: 176rpx;
+  box-shadow: 0rpx 4rpx 8rpx 0rpx rgba(223, 223, 223, 0.5);
+  border-radius: 8rpx;
+  border: 2rpx solid #EBEBEB;
+  overflow: hidden;
+}
+.popup_site_img {
+  float: left;
+  margin: 56rpx 24rpx 56rpx;
+  width: 64rpx;
+  height: 64rpx;
+}
+.popup_site_box {
+  float: left;
+  margin-top: 28rpx;
+  overflow: hidden;
+}
+.popup_site_box_t {
+  height: 40rpx;
+  font-size: 28rpx;
+  font-family: PingFangSC-Medium, PingFang SC;
+  font-weight: 500;
+  color: #333333;
+  line-height: 40rpx;
+}
+.popup_site_box_t text {
+  margin-left: 20rpx;
+  color: #EDC771;
+}
+.popup_site_box_f {
+  margin-top: 12rpx;
+  width: 500rpx;
+  height: 68rpx;
+  font-size: 24rpx;
+  font-family: PingFangSC-Medium, PingFang SC;
+  font-weight: 500;
+  color: #333333;
+  line-height: 34rpx;
+  overflow: hidden;
+}
+.popup_confirm {
+  margin: 60rpx 155rpx;
+  width: 440rpx;
+  height: 84rpx;
+  background: linear-gradient(90deg, #F6E1B0 0%, #EDC66E 100%);
+  border-radius: 50rpx;
+  text-align: center;
+  font-size: 32rpx;
+  font-family: PingFangSC-Semibold, PingFang SC;
+  font-weight: 600;
+  color: #333333;
+  line-height: 84rpx;
+}
+

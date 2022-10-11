@@ -42,6 +42,15 @@
 		    
 		},
 		{
+		    "path" : "pages/my/goodsDetail",
+		    "style" :                                                                                    
+		    {
+		        "navigationBarTitleText": "领取漱口水",
+		        "enablePullDownRefresh": false
+		    }
+		    
+		},
+		{
 		    "path" : "pages/my/callingCard",
 		    "style" :
 		    {
@@ -64,6 +73,15 @@
 		    "style" :                                                                                    
 		    {
 		        "navigationBarTitleText": "签署合同",
+		        "enablePullDownRefresh": false
+		    }
+		    
+		},
+		{
+		    "path" : "pages/my/groupDetail",
+		    "style" :                                                                                    
+		    {
+		        "navigationBarTitleText": "团队详情",
 		        "enablePullDownRefresh": false
 		    }
 		    

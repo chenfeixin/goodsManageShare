@@ -43,6 +43,14 @@
 			<view class="toolbox_l">邀请好友</view>
 			<image src="/static/more.png" class="toolbox_r"></image>
 		</view>
+		<view class="toolbox" @click="skip('/pages/my/goodsDetail')">
+			<view class="toolbox_l">免费领取漱口水</view>
+			<image src="/static/more.png" class="toolbox_r"></image>
+		</view>
+		<view class="toolbox" @click="skip('/pages/my/groupDetail')">
+			<view class="toolbox_l">团队详情</view>
+			<image src="/static/more.png" class="toolbox_r"></image>
+		</view>
 		<view class="toolbox" @click="call">
 			<view class="toolbox_l">客服热线</view>
 			<image src="/static/more.png" class="toolbox_r"></image>

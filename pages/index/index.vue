@@ -55,8 +55,32 @@
 			}
 		},
 		
+		
 		onShow() {
 			let that = this
+			
+			if(!uni.getStorageSync('user')){
+				uni.reLaunch({
+					url: '/pages/login/login'
+				})
+			}else{
+				uni.request({
+					url: getApp().globalData.url + 'api.login/isLogins',
+					method: 'POST',
+					data: {
+						uid: uni.getStorageSync('user').id
+					},
+					success(res) {
+						if(res.data.code==1){
+							console.log(res)
+						}else{
+							uni.reLaunch({
+								url: '/pages/login/login'
+							})
+						}
+					}
+				})
+			}
 			
 			that.request()
 			
