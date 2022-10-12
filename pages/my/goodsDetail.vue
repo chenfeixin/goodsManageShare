@@ -26,7 +26,7 @@
 		</view>
 		<!-- 底部按钮 -->
 		<view class="footer">
-			<view class="footer_button" @click="showPopup(2)">立即购买</view>
+			<view class="footer_button" @click="showPopup(2)">免费领取</view>
 		</view>
 		<!-- 弹窗 -->
 		<view class="popup_bg" v-if="popup" @click="hidePopup"></view>
@@ -35,14 +35,16 @@
 			<view class="popup_title">免费领取</view>
 			<view class="popup_num">领取数量 <text>500颗</text></view>
 			<view class="popup_siteTitle">收货地址</view>
-			<view class="popup_site">
+			<view class="popup_site" @click="selectAddress">
 				<image src="/static/site.png" class="popup_site_img"></image>
-				<view class="popup_site_box">
-					<view class="popup_site_box_t">陈先生 <text>13662071537</text></view>
-					<view class="popup_site_box_f">广东省广州市天河区天河客运站地铁口街道街道街道888号33</view>
+				<view class="popup_site_box" v-if="address.receiver||address.mobile">
+					<view class="popup_site_box_t">{{address.receiver}} <text>{{address.mobile}}</text></view>
+					<view class="popup_site_box_f">{{address.address}}</view>
 				</view>
+				<view class="popup_site_no" v-else>请选择收货地址></view>
 			</view>
-			<view class="popup_confirm">确定领取</view>
+			<view class="popup_confirm" @click="clickConfirm" v-if="showConfirm">确定领取</view>
+			<view class="popup_confirm" v-else>确定领取</view>
 		</view>
 	</view>
 </template>
@@ -54,25 +56,37 @@
 				popup: false, //弹窗是否显示
 				list: [],
 				rich: '',
-				nums: 1, //数量
-				popupType: 0, //1：加入购物车，2：立即购买
-				specIndex: [], //规格下标
-				specId: [], //规格组合id
-				skuId: '', //规格id
+				address: '',
+				address_id: '',
+				id: '',
+				showConfirm: '',
 			};
 		},
 		
-		onLoad(options) {
+		onLoad() {
 			let that = this
-			// that.id = options.id
+			
+			// 获取默认地址
+			uni.request({
+				url: getApp().globalData.url + 'api.address/def_address',
+				method: 'GET',
+				header: {
+					token: uni.getStorageSync('token')
+				},
+				success(res) {
+					if(res.data.code==1){
+						that.address = res.data.data
+						that.address_id = res.data.data.id
+					}
+				}
+			})
 		},
 		
 		onShow() {
 			let that = this
 			
-			that.specIndex = []
-			that.specId = []
-			
+			that.showConfirm = true
+			// 商品详情
 			uni.request({
 				url: getApp().globalData.url + 'api.goods/detail',
 				method: 'GET',
@@ -86,18 +100,6 @@
 					if(res.data.code==1){
 						that.list = res.data.data
 						that.rich = res.data.data.content.replace(/\<img/gi, '<img style="max-width:100%;height:auto" ')
-						if(res.data.data.sku_spec){
-							let specIndex = that.specIndex
-							let specId = that.specId
-							for(var i=0;i<res.data.data.sku_spec.length;i++){
-								specIndex.push(0)
-								specId.push(res.data.data.sku_spec[i].sku_value[0].id)
-								that.specIndex = specIndex
-								that.specId = specId
-								console.log(that.specId)
-								that.count()
-							}
-						}
 					}
 				}
 			})
@@ -107,6 +109,15 @@
 			skip(url){
 				uni.switchTab({
 					url,
+				})
+			},
+			
+			// 选择地址
+			selectAddress(){
+				let that = this
+				
+				uni.navigateTo({
+					url: '/pages/my/address?select=1'
 				})
 			},
 			
@@ -136,6 +147,7 @@
 						uni.hideLoading()
 						if(res.data.code==1){
 							that.popup = true
+							that.id = res.data.data
 						}else{
 							uni.showToast({
 								title: res.data.msg,
@@ -151,6 +163,42 @@
 				let that = this
 				
 				that.popup = false
+			},
+			
+			// 确定领取
+			clickConfirm(){
+				let that = this
+				
+				that.showConfirm = false
+				uni.request({
+					url: getApp().globalData.url + 'api.order/add',
+					method: 'POST',
+					header: {
+						token: uni.getStorageSync('token')
+					},
+					data: {
+						ids: that.id,
+						address_id: that.address_id,
+					},
+					success(res) {
+						if(res.data.code==1){
+							uni.showToast({
+								title: '领取成功!',
+								success() {
+									that.popup = false
+									that.showConfirm = true
+								}
+							})
+						}else{
+							that.showConfirm = true
+							uni.showToast({
+								title: res.data.msg,
+								icon: 'none',
+							})
+							
+						}
+					}
+				})
 			},
 		}
 	}
@@ -391,6 +439,17 @@
 					line-height: 34rpx;
 					overflow: hidden;
 				}
+			}
+			&_no{
+				float: left;
+				margin-top: 68rpx;
+				margin-left: 28rpx;
+				height: 40rpx;
+				font-size: 28rpx;
+				font-family: PingFangSC-Regular, PingFang SC;
+				font-weight: 400;
+				color: #000000;
+				line-height: 40rpx;
 			}
 		}
 		&_confirm{

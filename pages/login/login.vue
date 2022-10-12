@@ -9,7 +9,7 @@
 		</view>
 		<view class="box" style="margin-bottom: 30rpx;">
 			<view class="box_l">密码：</view>
-			<input type="password" maxlength="12" class="box_input" placeholder="请输入登录密码" @input="inputPassword" />
+			<input type="password" maxlength="6" class="box_input" placeholder="请输入登录密码" @input="inputPassword" />
 		</view>
 		<view class="box" style="height: 36rpx;">
 			<view class="box_set" @click="setPassword">忘记密码</view>

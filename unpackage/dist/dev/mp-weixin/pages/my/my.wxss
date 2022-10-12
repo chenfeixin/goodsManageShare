@@ -92,6 +92,18 @@ page {
   background: #FFFFFF;
   border-radius: 6rpx;
 }
+.top_r_group {
+  margin-top: 8rpx;
+  width: 130rpx;
+  height: 42rpx;
+  font-size: 28rpx;
+  font-family: PingFangSC-Medium, PingFang SC;
+  font-weight: 500;
+  color: #2200FF;
+  line-height: 40rpx;
+  text-align: center;
+  text-decoration: underline;
+}
 .list {
   margin: -32rpx 24rpx 0rpx;
   width: 702rpx;

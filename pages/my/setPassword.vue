@@ -34,6 +34,7 @@
 				</view>
 			</view>
 			<view class="hint" v-if="title=='设置平台支付密码'">支付提现密码必须为6位数字</view>
+			<view class="hint" v-if="title=='登录密码'">登录密码必须为6位数字</view>
 			<view class="button" @click="confirm" v-if="mobile&&verification&&password&&confirmPassword">提交</view>
 			<view class="button" @click="hint" v-else>提交</view>
 		</view>

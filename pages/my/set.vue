@@ -30,6 +30,10 @@
 			<view class="boxes_l"><text style="color: red;">*</text>修改平台支付密码</view>
 			<view class="boxes_r">设置></view>
 		</view>
+		<view class="boxes" @click="call">
+			<view class="boxes_l">客服热线（4001360376）</view>
+			<view class="boxes_r">呼叫</view>
+		</view>
 		<view class="boxes" @click="logout">
 			<view class="boxes_l">退出登录</view>
 			<view class="boxes_r">退出</view>
@@ -66,6 +70,12 @@
 			}
 		},
 		methods: {
+			// 拨打电话
+			call(){
+				uni.makePhoneCall({
+					phoneNumber: '4001360376'
+				})
+			},
 			// 选择头像
 			selectAvatar(){
 				let that = this

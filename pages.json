@@ -51,6 +51,33 @@
 		    
 		},
 		{
+		    "path" : "pages/my/address",
+		    "style" :                                                                                    
+		    {
+		        "navigationBarTitleText": "收货地址",
+		        "enablePullDownRefresh": false
+		    }
+		    
+		},
+		{
+		    "path" : "pages/my/site",
+		    "style" :                                                                                    
+		    {
+		        "navigationBarTitleText": "编辑地址",
+		        "enablePullDownRefresh": false
+		    }
+		    
+		},
+		{
+		    "path" : "pages/my/myGet",
+		    "style" :                                                                                    
+		    {
+		        "navigationBarTitleText": "漱口水领取详情",
+		        "enablePullDownRefresh": false
+		    }
+		    
+		},
+		{
 		    "path" : "pages/my/callingCard",
 		    "style" :
 		    {

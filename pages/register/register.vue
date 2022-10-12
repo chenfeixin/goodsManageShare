@@ -1,7 +1,7 @@
 <template>
 	<view>
 		<image src="/static/hzg_logo.png" class="logo"></image>
-		<view class="title">欢迎注册好掌柜共享</view>
+		<view class="title">欢迎注册好掌柜共享科技</view>
 		<view class="box">
 			<view class="box_l">账户昵称：</view>
 			<input type="text" maxlength="12" placeholder="请输入您的昵称" class="box_input" @input="inputNickName">

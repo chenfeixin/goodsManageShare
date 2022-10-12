@@ -5,7 +5,7 @@
 			<view class="box_t">
 				<view class="box_t_box" :style="{width: category==1?'25%' : '33%'}" v-for="(item,index) in topList" :key="index">{{item}}</view>
 			</view>
-			<view class="box_f" v-for="(item,index) in list" :key="index" @click="callingCard(item.uid)">
+			<view class="box_f" v-for="(item,index) in list" :key="index" @click="callingCard(item.id)">
 				<view class="box_f_text" :style="{width: category==1?'25%' : '33%'}">{{item.nickname}}</view>
 				<view class="box_f_text" :style="{width: category==1?'25%' : '33%'}">{{item.num}}</view>
 				<view class="box_f_text" v-if="category==1" style="color: #CBA55F;">{{item.currency}}</view>

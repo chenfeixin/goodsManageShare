@@ -242,6 +242,17 @@
   line-height: 34rpx;
   overflow: hidden;
 }
+.popup_site_no {
+  float: left;
+  margin-top: 68rpx;
+  margin-left: 28rpx;
+  height: 40rpx;
+  font-size: 28rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #000000;
+  line-height: 40rpx;
+}
 .popup_confirm {
   margin: 60rpx 155rpx;
   width: 440rpx;

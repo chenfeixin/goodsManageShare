@@ -11,6 +11,7 @@
 			<view class="top_r">
 				<view class="top_r_text">{{list.user_category}}</view>
 				<view class="top_r_border"></view>
+				<view class="top_r_group" @click="skip('/pages/my/groupDetail')">团队详情</view>
 			</view>
 		</view>
 		
@@ -47,14 +48,22 @@
 			<view class="toolbox_l">免费领取漱口水</view>
 			<image src="/static/more.png" class="toolbox_r"></image>
 		</view>
-		<view class="toolbox" @click="skip('/pages/my/groupDetail')">
+		<view class="toolbox" @click="skip('/pages/my/myGet')">
+			<view class="toolbox_l">漱口水领取详情</view>
+			<image src="/static/more.png" class="toolbox_r"></image>
+		</view>
+		<view class="toolbox" @click="skip('/pages/my/address')">
+			<view class="toolbox_l">收货地址</view>
+			<image src="/static/more.png" class="toolbox_r"></image>
+		</view>
+		<!-- <view class="toolbox" @click="skip('/pages/my/groupDetail')">
 			<view class="toolbox_l">团队详情</view>
 			<image src="/static/more.png" class="toolbox_r"></image>
-		</view>
-		<view class="toolbox" @click="call">
+		</view> -->
+		<!-- <view class="toolbox" @click="call">
 			<view class="toolbox_l">客服热线</view>
 			<image src="/static/more.png" class="toolbox_r"></image>
-		</view>
+		</view> -->
 		<view class="toolbox" @click="skip('/pages/my/set')">
 			<view class="toolbox_l">设置</view>
 			<image src="/static/more.png" class="toolbox_r"></image>
@@ -240,6 +249,18 @@
 				height: 12rpx;
 				background: #FFFFFF;
 				border-radius: 6rpx;
+			}
+			&_group{
+				margin-top: 8rpx;
+				width: 130rpx;
+				height: 42rpx;
+				font-size: 28rpx;
+				font-family: PingFangSC-Medium, PingFang SC;
+				font-weight: 500;
+				color: #2200FF;
+				line-height: 40rpx;
+				text-align: center;
+				text-decoration: underline;
 			}
 		}
 	}
