@@ -28,7 +28,7 @@
 	export default {
 		data() {
 			return {
-				money: 1000, //转换金额
+				money: 300, //转换金额
 				password: '', //密码
 				showButton: true, //是否可以点击按钮
 				bankName: '', //银行信息
@@ -103,7 +103,7 @@
 			confirm(){
 				let that = this
 				
-				if(that.money>=1000){
+				if(that.money>=300){
 					if(that.password.length==6){
 						that.showButton = false
 						
@@ -144,7 +144,7 @@
 					}
 				}else{
 					uni.showToast({
-						title: '最小提现金额1000元起',
+						title: '最小提现金额300元起',
 						icon: 'none'
 					})
 				}
